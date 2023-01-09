@@ -1,0 +1,8 @@
+apiVersion: 21
+kind: Pod
+metadata:
+  name: nginxwebserver
+spec:
+  containers:
+  -  image: nginx
+  -  name: democontainer
