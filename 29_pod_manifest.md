@@ -46,3 +46,7 @@ kubectl delete pod nginx
 kubectl delete pod --all
 ``` 
 
+## **5. Explain fields**
+```bash
+kubectl explain pod.spec.containers
+```
