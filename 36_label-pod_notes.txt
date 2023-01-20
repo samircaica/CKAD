@@ -1,0 +1,46 @@
+kubectl run pod-1 --image=nginx
+
+kubectl run pod-2 --image=nginx
+
+kubectl run pod-3 --image=nginx
+
+kubectl get pods
+
+kubectl get pods --show-labels
+
+
+kubectl label pod pod-1 env=dev
+
+kubectl label pod pod-2 env=stage
+
+kubectl label pod pod-3 env=prod
+
+kubectl get pods -l env=dev
+
+kubectl get pods -l env=prod
+
+kubectl get pods -l env!=prod
+
+
+kubectl label pod pod-1 env-
+
+
+kubectl run nginx --image=nginx --dry-run=client -o yaml > 36_label-pod.yaml
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: nginx
+    env: dev
+  name: nginx
+spec:
+  containers:
+  - image: nginx
+    name: nginx
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
